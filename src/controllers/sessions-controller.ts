@@ -38,7 +38,7 @@ class SessionsController {
             expiresIn
         })
 
-        const {password: hashedPassword, ...userWithoutPassword} = user;
+        const { password: hashedPassword, ...userWithoutPassword } = user;
 
         return response.json({ token, user: userWithoutPassword });
 
