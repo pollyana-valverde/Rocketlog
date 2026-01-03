@@ -1,8 +1,7 @@
 import { Request, Response } from "express";
-import { prisma } from "@/database/prisma";
+import { prisma } from "@/database/prisma.js";
 import z from "zod";
-import { AppError } from "@/utils/AppError";
-import { de } from "zod/v4/locales";
+import { AppError } from "@/utils/AppError.js";
 
 class DeliveryLogsController {
     async create(request: Request, response: Response) {

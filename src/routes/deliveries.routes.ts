@@ -1,10 +1,10 @@
 import { Router } from "express";
 
-import { DeliveriesController } from "@/controllers/deliveries-controller";
-import { DeliveriesStatusController } from "@/controllers/deliveries-status-controller";
+import { DeliveriesController } from "@/controllers/deliveries-controller.js";
+import { DeliveriesStatusController } from "@/controllers/deliveries-status-controller.js";
 
-import { ensureAuth } from "@/middlewares/ensure-auth";
-import { verifyUserAuthorization } from "@/middlewares/verify-user.authorization";
+import { ensureAuth } from "@/middlewares/ensure-auth.js";
+import { verifyUserAuthorization } from "@/middlewares/verify-user.authorization.js";
 
 const deliveriesRoutes = Router();
 const deliveriesController = new DeliveriesController();

@@ -8,8 +8,8 @@
     },
 
     // Enable the following options to better support modern JavaScript features
-    "moduleResolution": "node",
-    "module": "ESNext",
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
 

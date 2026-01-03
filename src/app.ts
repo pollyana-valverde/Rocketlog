@@ -1,8 +1,8 @@
 import express from 'express';
 import 'express-async-error';
 
-import { routes } from '@/routes';
-import { errorHandling } from '@/middlewares/error-handling';
+import { routes } from '@/routes/index.js';
+import { errorHandling } from '@/middlewares/error-handling.js';
 
 const app = express();
 

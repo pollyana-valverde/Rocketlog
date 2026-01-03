@@ -4,8 +4,10 @@
   "description": "API de entregas de encomendas",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch --env-file .env src/server.ts"
-    },
+    "dev": "tsx watch --env-file .env src/server.ts",
+    "build": "tsup src --out-dir build --format esm --clean",
+    "start": "node --env-file .env build/server.js"
+  },
   "author": "Pollyana Valverde",
   "license": "ISC",
   "type": "module",
@@ -24,6 +26,7 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.0.2",
     "prisma": "^7.2.0",
+    "tsup": "^8.5.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
