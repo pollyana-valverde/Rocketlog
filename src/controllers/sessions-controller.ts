@@ -2,9 +2,9 @@ import { AppError } from "@/utils/AppError";
 import { Request, Response } from "express";
 import { authConfig } from "@/configs/auth";
 import { prisma } from "@/database/prisma";
-import jwt from "jsonwebtoken";
 import { compare } from "bcrypt";
 import z from "zod";
+import { sign } from "jsonwebtoken"
 
 class SessionsController {
     async create(request: Request, response: Response) {
@@ -33,10 +33,10 @@ class SessionsController {
             throw new AppError("JWT secret is not defined", 500);
         }
 
-        const token = jwt.sign({ role: user.role ?? "customer" }, secret, {
+        const token = sign({ role: user.role ?? "customer" }, secret, {
             subject: String(user.id),
-            expiresIn
-        })
+            expiresIn: Number(expiresIn),
+        });
 
         const { password: hashedPassword, ...userWithoutPassword } = user;
 
